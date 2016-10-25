@@ -19,9 +19,14 @@ Predicative Parsing Table
   
 ## Results using Main.py
 
-1. 
+Problem #1) 
   1. (i+i)*i$ => Valid
   2. i*(i-i)$ => Valid
   3. i(i+i)$ => Invalid
+  
+Problem #2)
+  1. a=(a+a)*b$ => Invalid
+  2. a=a*(b+a)$ => Invalid
+  3. a=(a+a)b$ => Invalid
   
 \- Weffe
