@@ -25,8 +25,8 @@ Problem 1)
   3. i(i+i)$ => Invalid
   
 Problem 2)
-  1. a=(a+a)*b$ => Invalid
-  2. a=a*(b+a)$ => Invalid
+  1. a=(a+a)*b$ => Valid
+  2. a=a*(b+a)$ => Valid
   3. a=(a+a)b$ => Invalid
   
 \- Weffe
