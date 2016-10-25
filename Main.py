@@ -12,14 +12,15 @@ def run_parser(parsing_table, input_str, terminals, starting_non_terminal):
 
         # immediate check if the popped_char is a terminal
         if popped_char in terminals:
+            # we found a match
+            print('match: ' + popped_char + '\tstack: '+ stack.__str__())
             i = i + 1
             read_char = str_list[i]
             continue
         elif popped_char == '$':
             # check for end of string. If we got here then you're good to go!
-            print('Your string IS valid:', input_str)
+            print('\nYour string IS valid:', input_str)
             exit(0)
-
 
         # find [popped_char, read_char] in our parsing_table
         temp_parsed_value = parsing_table[popped_char][read_char]
@@ -93,7 +94,7 @@ if __name__ == '__main__':
     input_str = '(i+i)*i$'
     starting_non_terminal = 'E'
 
-    input_str = 'i*(i-i)$'
+    #input_str = 'i*(i-i)$'
     #input_str = 'i(i+i)$'
 
     run_parser(parsing_table, input_str, terminals, starting_non_terminal)
