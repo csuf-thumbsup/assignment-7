@@ -19,6 +19,7 @@ def run_parser(parsing_table, input_str, terminals, starting_non_terminal):
             continue
         elif popped_char == '$':
             # check for end of string. If we got here then you're good to go!
+            print('match: ' + popped_char + '\tstack: ' + stack.__str__())
             print('\nYour string IS valid:', input_str)
             exit(0)
 
@@ -41,8 +42,8 @@ def run_parser(parsing_table, input_str, terminals, starting_non_terminal):
                 stack.append(x)
 
 if __name__ == '__main__':
-    '''
-    Data for Problem #1
+
+    # Data for Problem #1
 
     parsing_table = {
         'E': {'i': 'TQ',
@@ -96,8 +97,8 @@ if __name__ == '__main__':
     terminals = ['i', '+', '-', '*', '/', '(', ')']
     input_str = '(i+i)*i$'
     starting_non_terminal = 'E'
-    '''
 
+    '''
     # Data for Problem #2
     parsing_table = {
         'S': {'a': 'F=E',
@@ -158,5 +159,21 @@ if __name__ == '__main__':
     terminals = ['a', 'b', '(', ')', '+', '=', '*']
     input_str = 'a=(a+a)*b$'
     starting_non_terminal = 'S'
+    '''
 
     run_parser(parsing_table, input_str, terminals, starting_non_terminal)
+
+'''
+Sample Output:
+
+match: (	stack: ['$', 'Q', 'R', ')', 'E']
+match: i	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: +	stack: ['$', 'Q', 'R', ')', 'Q', 'T']
+match: i	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: )	stack: ['$', 'Q', 'R']
+match: *	stack: ['$', 'Q', 'R', 'F']
+match: i	stack: ['$', 'Q', 'R']
+match: $	stack: []
+
+Your string IS valid: (i+i)*i$
+'''
