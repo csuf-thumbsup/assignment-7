@@ -22,6 +22,6 @@ Predicative Parsing Table
 1. 
   1. (i+i)*i$ => Valid
   2. i*(i-i)$ => Valid
-  3. i(i+i)$ => Unvalid
+  3. i(i+i)$ => Invalid
   
 \- Weffe
