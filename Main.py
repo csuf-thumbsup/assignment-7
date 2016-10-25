@@ -41,6 +41,9 @@ def run_parser(parsing_table, input_str, terminals, starting_non_terminal):
                 stack.append(x)
 
 if __name__ == '__main__':
+    '''
+    Data for Problem #1
+
     parsing_table = {
         'E': {'i': 'TQ',
               '+': 'undef',
@@ -93,8 +96,67 @@ if __name__ == '__main__':
     terminals = ['i', '+', '-', '*', '/', '(', ')']
     input_str = '(i+i)*i$'
     starting_non_terminal = 'E'
+    '''
 
-    #input_str = 'i*(i-i)$'
-    #input_str = 'i(i+i)$'
+    # Data for Problem #2
+    parsing_table = {
+        'S': {'a': 'F=E',
+              'b': 'F=E',
+              '(': 'F=E',
+              ')': 'undef',
+              '+': 'undef',
+              '*': 'undef',
+              '$': 'undef',
+              '=': 'undef'
+              },
+        'E': {'a': 'TQ',
+              'b': 'TQ',
+              '(': 'TQ',
+              ')': 'undef',
+              '+': 'undef',
+              '*': 'TQ',
+              '$': 'undef',
+              '=': 'undef'
+              },
+        'Q': {'a': 'undef',
+              'b': 'undef',
+              '(': 'undef',
+              ')': 'λ',
+              '+': '+TQ',
+              '*': 'undef',
+              '$': 'λ',
+              '=': 'undef'
+              },
+        'T': {'a': 'FR',
+              'b': 'FR',
+              '(': 'FR',
+              ')': 'undef',
+              '+': 'undef',
+              '*': 'undef',
+              '$': 'undef',
+              '=': 'undef'
+              },
+        'R': {'a': 'λ',
+              'b': 'λ',
+              '(': 'λ',
+              ')': 'undef',
+              '+': 'λ',
+              '*': '*FR',
+              '$': 'λ',
+              '=': 'undef'
+              },
+        'F': {'a': 'a',
+              'b': 'b',
+              '(': '(E)',
+              ')': 'undef',
+              '+': 'undef',
+              '*': 'undef',
+              '$': 'undef',
+              '=': 'undef'
+              }
+    }
+    terminals = ['a', 'b', '(', ')', '+', '=', '*']
+    input_str = 'a=(a+a)*b$'
+    starting_non_terminal = 'S'
 
     run_parser(parsing_table, input_str, terminals, starting_non_terminal)
