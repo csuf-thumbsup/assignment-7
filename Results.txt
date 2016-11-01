@@ -1,0 +1,65 @@
+Parsing Problem #1
+
+Results for (i+i)*i$: 
+match: (	stack: ['$', 'Q', 'R', ')', 'E']
+match: i	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: +	stack: ['$', 'Q', 'R', ')', 'Q', 'T']
+match: i	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: )	stack: ['$', 'Q', 'R']
+match: *	stack: ['$', 'Q', 'R', 'F']
+match: i	stack: ['$', 'Q', 'R']
+match: $	stack: []
+Your string IS valid: (i+i)*i$
+
+Results for i*(i-i)$: 
+match: i	stack: ['$', 'Q', 'R']
+match: *	stack: ['$', 'Q', 'R', 'F']
+match: (	stack: ['$', 'Q', 'R', ')', 'E']
+match: i	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: -	stack: ['$', 'Q', 'R', ')', 'Q', 'T']
+match: i	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: )	stack: ['$', 'Q', 'R']
+match: $	stack: []
+Your string IS valid: i*(i-i)$
+
+Results for i(i+i)$: 
+match: i	stack: ['$', 'Q', 'R']
+Your string is NOT valid for the given language!: i(i+i)$
+
+Parsing Problem #2
+
+Results for a=(a+a)*b$: 
+match: a	stack: ['$', 'E', '=']
+match: =	stack: ['$', 'E']
+match: (	stack: ['$', 'Q', 'R', ')', 'E']
+match: a	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: +	stack: ['$', 'Q', 'R', ')', 'Q', 'T']
+match: a	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: )	stack: ['$', 'Q', 'R']
+match: *	stack: ['$', 'Q', 'R', 'F']
+match: b	stack: ['$', 'Q', 'R']
+match: $	stack: []
+Your string IS valid: a=(a+a)*b$
+
+Results for a=a*(b+a)$: 
+match: a	stack: ['$', 'E', '=']
+match: =	stack: ['$', 'E']
+match: a	stack: ['$', 'Q', 'R']
+match: *	stack: ['$', 'Q', 'R', 'F']
+match: (	stack: ['$', 'Q', 'R', ')', 'E']
+match: b	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: +	stack: ['$', 'Q', 'R', ')', 'Q', 'T']
+match: a	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: )	stack: ['$', 'Q', 'R']
+match: $	stack: []
+Your string IS valid: a=a*(b+a)$
+
+Results for a=(a+a)b$: 
+match: a	stack: ['$', 'E', '=']
+match: =	stack: ['$', 'E']
+match: (	stack: ['$', 'Q', 'R', ')', 'E']
+match: a	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: +	stack: ['$', 'Q', 'R', ')', 'Q', 'T']
+match: a	stack: ['$', 'Q', 'R', ')', 'Q', 'R']
+match: )	stack: ['$', 'Q', 'R']
+Your string is NOT valid for the given language!: a=(a+a)b$
