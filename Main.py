@@ -20,8 +20,8 @@ def run_parser(parsing_table, input_str, terminals, starting_non_terminal):
         elif popped_char == '$':
             # check for end of string. If we got here then you're good to go!
             print('match: ' + popped_char + '\tstack: ' + stack.__str__())
-            print('\nYour string IS valid:', input_str)
-            exit(0)
+            print('Your string IS valid:', input_str)
+            return;
 
         # find [popped_char, read_char] in our parsing_table
         temp_parsed_value = parsing_table[popped_char][read_char]
@@ -29,7 +29,7 @@ def run_parser(parsing_table, input_str, terminals, starting_non_terminal):
         # our checks and balances
         if temp_parsed_value == 'undef':
             print('Your string is NOT valid for the given language!:', input_str)
-            exit(1)
+            return;
         elif temp_parsed_value == 'λ':
             # skip and loop back to top
             continue
